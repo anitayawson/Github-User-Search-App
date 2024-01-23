@@ -1,6 +1,6 @@
 import "./UserCard.scss";
 import locationIcon from "../../assets/icon-location.svg";
-import websiteIcon from "../../assets/icon-website.svg";
+import linkIcon from "../../assets/icon-website.svg";
 import socialIcon from "../../assets/icon-twitter.svg";
 import companyIcon from "../../assets/icon-company.svg";
 
@@ -16,7 +16,6 @@ export default function UserCard() {
           </div>
           <h3 className="user__date-joined">Joined 25 Jan 2011</h3>
         </div>
-        {/* <p className="">This profile has no bio</p> */}
       </div>
       <p className="user__description">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
@@ -47,7 +46,7 @@ export default function UserCard() {
             <p className="user-link__name">San Francisco</p>
           </div>
           <div className="user-links__website user-link__container">
-            <img className="website-icon" src={websiteIcon} alt="website" />
+            <img className="link-icon" src={linkIcon} alt="website" />
             <p className="user-link__name">https://github.blog</p>
           </div>
         </div>

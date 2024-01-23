@@ -166,6 +166,13 @@
   }
 }
 
+.user-links__website p {
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
 .user-link {
   &__container {
     display: flex;
@@ -193,7 +200,7 @@
   flex-shrink: 0;
 }
 
-.website-icon {
+.link-icon {
   width: 1.2494rem;
   height: 1.2466rem;
   flex-shrink: 0;
