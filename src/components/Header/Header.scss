@@ -16,6 +16,16 @@
 .dark-mode-btn {
   display: flex;
   gap: 1rem;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+
+    .dark-mode-btn__text {
+      color: $logo-color;
+    }
+  }
 
   &__text {
     color: $devfinder-dark-blue;
@@ -29,5 +39,15 @@
     width: 1.25rem;
     height: 1.25rem;
     align-self: center;
+
+    svg {
+      path {
+        fill: $devfinder-dark-blue;
+      }
+    }
+  }
+
+  &:hover .dark-mode-btn__icon svg path {
+    fill: $logo-color;
   }
 }
