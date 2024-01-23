@@ -6,8 +6,17 @@
   border-radius: 15px;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
   margin-top: 1rem;
-  margin-bottom: 4.9375rem;
   padding: 2rem 1.5rem 1.5rem;
+
+  @include tablet {
+    margin-top: 1.5rem;
+    padding: 2.5rem;
+  }
+
+  @include desktop {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 .user {
@@ -15,6 +24,10 @@
     display: flex;
     gap: 1.1875rem;
     align-items: center;
+
+    @include desktop {
+      align-items: flex-start;
+    }
   }
 
   &__img {
@@ -23,26 +36,72 @@
     height: 4.375rem;
     flex-shrink: 0;
     border-radius: 50%;
+
+    @include tablet {
+      width: 7.3125rem;
+      height: 7.3125rem;
+    }
+  }
+
+  &__header-info {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    @include desktop {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 1rem;
+    }
   }
 
   &__name {
     color: $devfinder-navy;
     font-size: 1rem;
+
+    @include tablet {
+      font-size: 1.625rem;
+    }
   }
 
   &__handle {
     color: $devfinder-blue;
     font-size: 0.8125rem;
     font-weight: $font-normal;
+
+    @include tablet {
+      font-size: 1rem;
+    }
   }
 
   &__date-joined {
     @include paragraph-styles;
+
+    @include tablet {
+      font-size: 0.9375rem;
+    }
+
+    @include desktop {
+      margin-top: 0.5rem;
+    }
   }
 
   &__description {
     @include paragraph-styles;
     margin-top: 2.125rem;
+
+    @include tablet {
+      font-size: 0.9375rem;
+      margin-top: 1.5rem;
+    }
+
+    @include desktop {
+      margin-left: 9.75rem;
+      margin-top: -2.25rem;
+    }
   }
 }
 
@@ -57,11 +116,30 @@
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
 
+  @include tablet {
+    padding-top: 1rem;
+    padding-bottom: 1.0625rem;
+    padding-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1.875rem;
+    justify-content: flex-start;
+    gap: 5.25rem;
+    height: auto;
+  }
+
+  @include desktop {
+    margin-left: 9.75rem;
+  }
+
   &__label {
     font-size: 0.6875rem;
     text-align: center;
     margin-bottom: 0.5rem;
     color: $devfinder-dark-blue;
+
+    @include tablet {
+      font-size: 0.875rem;
+    }
   }
 
   &__info {
@@ -69,8 +147,25 @@
     font-size: 1rem;
     font-weight: $font-bold;
     text-align: center;
+
+    @include tablet {
+      text-align: left;
+      font-size: 1.375rem;
+    }
   }
 }
+
+.user-links {
+  @include tablet {
+    display: flex;
+    gap: 4.0625rem;
+  }
+
+  @include desktop {
+    margin-left: 9.75rem;
+  }
+}
+
 .user-link {
   &__container {
     display: flex;
@@ -81,7 +176,15 @@
   &__name {
     @include paragraph-styles;
     margin-left: 1rem;
+
+    @include tablet {
+      font-size: 0.9375rem;
+    }
   }
+}
+
+.info-unavailable {
+  color: $unavailable-info-color;
 }
 
 .location-icon {
@@ -98,7 +201,7 @@
 
 .social-icon {
   width: 1.25rem;
-  height: 1.0156rem;
+  height: 1.2rem;
   flex-shrink: 0;
 }
 
