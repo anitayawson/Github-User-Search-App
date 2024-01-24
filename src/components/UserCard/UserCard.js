@@ -3,10 +3,12 @@ import locationIcon from "../../assets/icon-location.svg";
 import linkIcon from "../../assets/icon-website.svg";
 import socialIcon from "../../assets/icon-twitter.svg";
 import companyIcon from "../../assets/icon-company.svg";
+import { useTheme } from "../ThemeProvider";
 
-export default function UserCard({ userData, isDarkMode }) {
+export default function UserCard({ userData }) {
+  const { theme } = useTheme();
   return (
-    <section className={`user-card ${isDarkMode ? "dark-mode" : ""}`}>
+    <section className={`user-card ${theme}`}>
       <div className="user__header">
         <div className="user__img-container">
           {userData && userData.avatar_url ? (
@@ -21,12 +23,12 @@ export default function UserCard({ userData, isDarkMode }) {
         </div>
         <div className="user__header-info">
           <div>
-            <h1 className="user__name">
+            <h1 className={`user__name ${theme}`}>
               {userData?.name ? userData.name : userData?.login}
             </h1>
             <h3 className="user__handle">@{userData?.login}</h3>
           </div>
-          <h3 className="user__date-joined">
+          <h3 className={`user__date-joined ${theme}`}>
             Joined{" "}
             {userData && userData.created_at
               ? new Date(userData.created_at)
@@ -41,31 +43,33 @@ export default function UserCard({ userData, isDarkMode }) {
         </div>
       </div>
       <p
-        className={`user__description ${userData?.bio ? "" : "no-bio-opacity"}`}
+        className={`user__description ${theme} ${
+          userData?.bio ? "" : "no-bio-opacity"
+        }`}
       >
         {userData?.bio || "This profile has no bio"}
       </p>
-      <div className={`user-stats ${isDarkMode ? "dark-mode" : ""}`}>
+      <div className={`user-stats ${theme}`}>
         <div className="user-stats__repos">
-          <p className="user-stats__label">Repos</p>
-          <p className="user-stats__info">
+          <p className={`user-stats__label ${theme}`}>Repos</p>
+          <p className={`user-stats__info ${theme}`}>
             {userData ? userData.public_repos : 0}
           </p>
         </div>
         <div className="user-stats__followers">
-          <p className="user-stats__label">Followers</p>
-          <p className="user-stats__info">
+          <p className={`user-stats__label ${theme}`}>Followers</p>
+          <p className={`user-stats__info ${theme}`}>
             {userData ? userData.followers : 0}
           </p>
         </div>
         <div className="user-stats__following">
-          <p className="user-stats__label">Following</p>
-          <p className="user-stats__info">
+          <p className={`user-stats__label ${theme}`}>Following</p>
+          <p className={`user-stats__info ${theme}`}>
             {userData ? userData.following : 0}
           </p>
         </div>
       </div>
-      <div className={`user-links ${isDarkMode ? "dark-mode" : ""}`}>
+      <div className="user-links">
         <div>
           <div
             className={`user-links__location user-link__container ${
@@ -77,7 +81,7 @@ export default function UserCard({ userData, isDarkMode }) {
               src={locationIcon}
               alt="location pin"
             />
-            <p className={`user-link__name ${isDarkMode ? "dark-mode" : ""}`}>
+            <p className={`user-link__name ${theme}`}>
               {userData?.location || "Not Available"}
             </p>
           </div>
@@ -89,16 +93,12 @@ export default function UserCard({ userData, isDarkMode }) {
             <img className="link-icon" src={linkIcon} alt="website" />
             {userData?.blog ? (
               <a href={userData.blog} target="_blank" rel="noopener noreferrer">
-                <p
-                  className={`user-link__name ${isDarkMode ? "dark-mode" : ""}`}
-                >
-                  {userData.blog}
-                </p>
+                <p className={`user-link__name ${theme}`}>{userData.blog}</p>
               </a>
             ) : (
               <p
-                className={`user-link__name ${
-                  isDarkMode ? "dark-mode" : "not-available"
+                className={`user-link__name ${theme} ${
+                  userData?.blog ? "" : "not-available"
                 }`}
               >
                 Not Available
@@ -110,7 +110,7 @@ export default function UserCard({ userData, isDarkMode }) {
           <div className="user-links__social user-link__container">
             <img className="social-icon" src={socialIcon} alt="twitter" />
             <p
-              className={`user-link__name ${
+              className={`user-link__name ${theme} ${
                 userData?.twitter_username ? "" : "not-available"
               }`}
             >
@@ -130,7 +130,7 @@ export default function UserCard({ userData, isDarkMode }) {
           <div className="user-links__company user-link__container">
             <img src={companyIcon} alt="office building" />
             <p
-              className={`user-link__name ${
+              className={`user-link__name ${theme} ${
                 userData?.company ? "" : "not-available"
               }`}
             >

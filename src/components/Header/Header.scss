@@ -5,14 +5,63 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &.dark {
+    .logo {
+      color: #ffffff;
+    }
+
+    .dark-mode-btn {
+      .dark-mode-btn__text {
+        color: #ffffff;
+      }
+
+      .dark-mode-btn__icon svg path {
+        fill: #ffffff;
+      }
+    }
+  }
 }
 
 .logo {
   font-size: 1.625rem;
   font-weight: $font-bold;
   color: $logo-color;
+}
 
-  &.dark-mode {
-    color: $darkmode-white;
+.dark-mode-btn {
+  display: flex;
+  gap: 1rem;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+
+    .dark-mode-btn__text {
+      color: $logo-color;
+    }
+
+    .dark-mode-btn__icon svg path {
+      fill: $logo-color;
+    }
+  }
+
+  &__text {
+    color: $devfinder-dark-blue;
+    font-size: 0.8125rem;
+    font-weight: $font-bold;
+    letter-spacing: 0.1563rem;
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    align-self: center;
+
+    svg path {
+      fill: $devfinder-dark-blue;
+    }
   }
 }

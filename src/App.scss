@@ -1,6 +1,13 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/mixins" as *;
 
+:root {
+  --bg-color-light: $devfinder-light-blue;
+  --text-color-light: $devfinder-dark-blue;
+  --bg-color-dark: #141d2f;
+  --text-color-dark: #ffffff;
+}
+
 html,
 body,
 h1,
@@ -10,12 +17,13 @@ p {
   box-sizing: border-box;
   margin: 0;
   font-family: "Space Mono", monospace;
+  color: var(--text-color-light);
 }
 
 button,
 input {
   font-family: "Space Mono", monospace;
-  color: $devfinder-dark-blue;
+  color: var(--text-color-light);
 }
 
 *,
@@ -25,15 +33,10 @@ input {
 }
 
 body {
-  background-color: $devfinder-light-blue;
+  background-color: var(--bg-color-light);
   padding-top: 1.9375rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-
-  &.dark-mode {
-    background-color: $darkmode-black;
-    color: $darkmode-white;
-  }
 
   @include tablet {
     padding: 8.75rem 6.125rem 10rem 6.0625rem;
@@ -44,5 +47,10 @@ body {
     padding-bottom: 6rem;
     padding-left: 25%;
     padding-right: 25%;
+  }
+
+  &.dark {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
   }
 }

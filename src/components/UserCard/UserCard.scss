@@ -8,6 +8,11 @@
   margin-top: 1rem;
   padding: 2rem 1.5rem 1.5rem;
 
+  &.dark {
+    background-color: #1e2a47;
+    box-shadow: none;
+  }
+
   @include tablet {
     margin-top: 1.5rem;
     padding: 2.5rem;
@@ -17,11 +22,6 @@
     padding-left: 3rem;
     padding-right: 3rem;
   }
-}
-
-.user-card.dark-mode {
-  background-color: $darkmode-dark-blue;
-  box-shadow: none;
 }
 
 .user {
@@ -79,6 +79,10 @@
     color: $devfinder-navy;
     font-size: 1rem;
 
+    &.dark {
+      color: $darkmode-white;
+    }
+
     @include tablet {
       font-size: 1.625rem;
     }
@@ -97,6 +101,10 @@
   &__date-joined {
     @include paragraph-styles;
 
+    &.dark {
+      color: $darkmode-white;
+    }
+
     @include tablet {
       font-size: 0.9375rem;
     }
@@ -109,6 +117,10 @@
   &__description {
     @include paragraph-styles;
     margin-top: 2.125rem;
+
+    &.dark {
+      color: $darkmode-white;
+    }
 
     @include tablet {
       font-size: 0.9375rem;
@@ -137,6 +149,10 @@
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
 
+  &.dark {
+    background-color: $darkmode-black;
+  }
+
   @include tablet {
     padding-top: 1rem;
     padding-bottom: 1.0625rem;
@@ -158,6 +174,10 @@
     margin-bottom: 0.5rem;
     color: $devfinder-dark-blue;
 
+    &.dark {
+      color: $darkmode-white;
+    }
+
     @include tablet {
       font-size: 0.875rem;
     }
@@ -168,6 +188,10 @@
     font-size: 1rem;
     font-weight: $font-bold;
     text-align: center;
+
+    &.dark {
+      color: $darkmode-white;
+    }
 
     @include tablet {
       text-align: left;
@@ -197,6 +221,10 @@
     text-decoration: underline;
     cursor: pointer;
   }
+
+  @include tablet {
+    max-width: 12.0625rem;
+  }
 }
 
 .user-link {
@@ -214,7 +242,7 @@
       font-size: 0.9375rem;
     }
 
-    &.dark-mode {
+    &.dark {
       color: $darkmode-white;
     }
   }
@@ -262,6 +290,11 @@
 
 .not-available {
   color: $unavailable-info-color;
+
+  &.dark {
+    color: $darkmode-white;
+    opacity: 0.3;
+  }
 
   .social-icon {
     fill: $unavailable-info-color;
