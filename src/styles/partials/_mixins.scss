@@ -1,5 +1,15 @@
 @use "./variables" as *;
 
+@mixin dark-mode-styles {
+  background-color: $darkmode-black;
+  color: $darkmode-white;
+
+  input,
+  section {
+    background-color: $darkmode-dark-blue;
+  }
+}
+
 @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
     @content;

@@ -1,16 +1,11 @@
 import "./Header.scss";
-import { ReactComponent as MoonIcon } from "../../assets/icon-moon.svg";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
-export default function Header() {
+export default function Header({ isDarkMode, toggleDarkMode }) {
   return (
     <header className="header">
-      <div className="logo">devfinder</div>
-      <button className="dark-mode-btn">
-        <p className="dark-mode-btn__text">Dark</p>
-        <div className="dark-mode-btn__icon">
-          <MoonIcon />
-        </div>
-      </button>
+      <div className={`logo ${isDarkMode ? "dark-mode" : ""}`}>devfinder</div>
+      <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
     </header>
   );
 }

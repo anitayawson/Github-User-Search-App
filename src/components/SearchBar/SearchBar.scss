@@ -16,6 +16,11 @@
     font-size: 0.8125rem;
     padding-left: 2.7rem;
 
+    &.dark-mode {
+      background-color: $darkmode-dark-blue;
+      box-shadow: none;
+    }
+
     &:hover {
       cursor: pointer;
     }

@@ -1,0 +1,57 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.dark-mode-btn {
+  display: flex;
+  gap: 1rem;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+
+    .dark-mode-btn__text {
+      color: $logo-color;
+    }
+
+    .dark-mode-btn__icon {
+      svg {
+        path {
+          fill: $logo-color;
+        }
+      }
+    }
+  }
+
+  &__text {
+    color: $devfinder-dark-blue;
+    font-size: 0.8125rem;
+    font-weight: $font-bold;
+    letter-spacing: 0.1563rem;
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    align-self: center;
+  }
+
+  &.dark-mode {
+    &__text {
+      color: $darkmode-white;
+    }
+    &__icon svg path {
+      fill: $darkmode-white;
+    }
+
+    &:hover {
+      &__text {
+        color: $darkmode-hover-color;
+      }
+      &__icon svg path {
+        fill: $darkmode-hover-color;
+      }
+    }
+  }
+}

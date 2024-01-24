@@ -4,9 +4,9 @@ import linkIcon from "../../assets/icon-website.svg";
 import socialIcon from "../../assets/icon-twitter.svg";
 import companyIcon from "../../assets/icon-company.svg";
 
-export default function UserCard() {
+export default function UserCard({ isDarkMode }) {
   return (
-    <section className="user-card">
+    <section className={`user-card ${isDarkMode ? "dark-mode" : ""}`}>
       <div className="user__header">
         <div className="user__img"></div>
         <div className="user__header-info">
@@ -21,7 +21,7 @@ export default function UserCard() {
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
         Quisque volutpat mattis eros.
       </p>
-      <div className="user-stats">
+      <div className={`user-stats ${isDarkMode ? "dark-mode" : ""}`}>
         <div className="user-stats__repos">
           <p className="user-stats__label">Repos</p>
           <p className="user-stats__info">8</p>
@@ -35,7 +35,7 @@ export default function UserCard() {
           <p className="user-stats__info">9</p>
         </div>
       </div>
-      <div className="user-links">
+      <div className={`user-links ${isDarkMode ? "dark-mode" : ""}`}>
         <div>
           <div className="user-links__location user-link__container">
             <img
@@ -43,11 +43,15 @@ export default function UserCard() {
               src={locationIcon}
               alt="location pin"
             />
-            <p className="user-link__name">San Francisco</p>
+            <p className={`user-link__name ${isDarkMode ? "dark-mode" : ""}`}>
+              San Francisco
+            </p>
           </div>
           <div className="user-links__website user-link__container">
             <img className="link-icon" src={linkIcon} alt="website" />
-            <p className="user-link__name">https://github.blog</p>
+            <p className={`user-link__name ${isDarkMode ? "dark-mode" : ""}`}>
+              https://github.blog
+            </p>
           </div>
         </div>
         <div>
@@ -57,7 +61,9 @@ export default function UserCard() {
           </div>
           <div className="user-links__company user-link__container">
             <img src={companyIcon} alt="office building" />
-            <p className="user-link__name">@github</p>
+            <p className={`user-link__name ${isDarkMode ? "dark-mode" : ""}`}>
+              @github
+            </p>
           </div>
         </div>
       </div>
