@@ -220,10 +220,6 @@
   }
 }
 
-.info-unavailable {
-  color: $unavailable-info-color;
-}
-
 .location-icon {
   width: 0.8596rem;
   height: 1.25rem;
@@ -261,5 +257,13 @@
 
   &.dark-mode {
     fill: $darkmode-white;
+  }
+}
+
+.not-available {
+  color: $unavailable-info-color;
+
+  .social-icon {
+    fill: $unavailable-info-color;
   }
 }

@@ -5,6 +5,7 @@ import searchIcon from "../../assets/icon-search.svg";
 
 export default function SearchBar({ isDarkMode, onUserFound }) {
   const [username, setUsername] = useState("");
+  const [noResults, setNoResults] = useState(false);
 
   const handleSearch = async () => {
     try {
@@ -12,8 +13,10 @@ export default function SearchBar({ isDarkMode, onUserFound }) {
         `https://api.github.com/users/${username}`
       );
       onUserFound(response.data);
+      setNoResults(false);
     } catch (error) {
       console.error("Error getting user:", error);
+      setNoResults(true);
     }
   };
   return (
@@ -23,12 +26,21 @@ export default function SearchBar({ isDarkMode, onUserFound }) {
         className={`search-container__input ${isDarkMode ? "dark-mode" : ""}`}
         type="text"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={(event) => setUsername(event.target.value)}
         placeholder="Search GitHub username…"
       />
       <button onClick={handleSearch} className="search-container__btn">
         Search
       </button>
+      {noResults && (
+        <p
+          className={`search-container__no-results ${
+            isDarkMode ? "dark-mode" : ""
+          }`}
+        >
+          No results
+        </p>
+      )}
     </div>
   );
 }

@@ -67,7 +67,11 @@ export default function UserCard({ userData, isDarkMode }) {
       </div>
       <div className={`user-links ${isDarkMode ? "dark-mode" : ""}`}>
         <div>
-          <div className="user-links__location user-link__container">
+          <div
+            className={`user-links__location user-link__container ${
+              !userData?.location ? "not-available" : ""
+            }`}
+          >
             <img
               className="location-icon"
               src={locationIcon}
@@ -77,33 +81,59 @@ export default function UserCard({ userData, isDarkMode }) {
               {userData?.location || "Not Available"}
             </p>
           </div>
-          <div className="user-links__website user-link__container">
+          <div
+            className={`user-links__website user-link__container ${
+              !userData?.blog ? "not-available" : ""
+            }`}
+          >
             <img className="link-icon" src={linkIcon} alt="website" />
-            <p className={`user-link__name ${isDarkMode ? "dark-mode" : ""}`}>
-              {userData?.blog ? (
+            {userData?.blog ? (
+              <a href={userData.blog} target="_blank" rel="noopener noreferrer">
+                <p
+                  className={`user-link__name ${isDarkMode ? "dark-mode" : ""}`}
+                >
+                  {userData.blog}
+                </p>
+              </a>
+            ) : (
+              <p
+                className={`user-link__name ${
+                  isDarkMode ? "dark-mode" : "not-available"
+                }`}
+              >
+                Not Available
+              </p>
+            )}
+          </div>
+        </div>
+        <div>
+          <div className="user-links__social user-link__container">
+            <img className="social-icon" src={socialIcon} alt="twitter" />
+            <p
+              className={`user-link__name ${
+                userData?.twitter_username ? "" : "not-available"
+              }`}
+            >
+              {userData?.twitter_username ? (
                 <a
-                  href={userData.blog}
+                  href={`https://twitter.com/${userData.twitter_username}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {userData.blog}
+                  {userData.twitter_username}
                 </a>
               ) : (
                 "Not Available"
               )}
             </p>
           </div>
-        </div>
-        <div>
-          <div className="user-links__social user-link__container">
-            <img className="social-icon" src={socialIcon} alt="twitter" />
-            <p className="user-link__name">
-              {userData?.twitter_username || "Not Available"}
-            </p>
-          </div>
           <div className="user-links__company user-link__container">
             <img src={companyIcon} alt="office building" />
-            <p className={`user-link__name ${isDarkMode ? "dark-mode" : ""}`}>
+            <p
+              className={`user-link__name ${
+                userData?.company ? "" : "not-available"
+              }`}
+            >
               {userData?.company || "Not Available"}
             </p>
           </div>
