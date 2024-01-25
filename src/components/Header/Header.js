@@ -1,11 +1,22 @@
 import "./Header.scss";
-import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import { useTheme } from "../../components/ThemeProvider";
+import { ReactComponent as MoonIcon } from "../../assets/icon-moon.svg";
+import { ReactComponent as SunIcon } from "../../assets/icon-sun.svg";
 
-export default function Header({ isDarkMode, toggleDarkMode }) {
+export default function Header() {
+  const { theme, toggleDarkMode } = useTheme();
+
   return (
-    <header className="header">
-      <div className={`logo ${isDarkMode ? "dark-mode" : ""}`}>devfinder</div>
-      <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+    <header className={`header ${theme}`}>
+      <div className="logo">devfinder</div>
+      <button className="dark-mode-btn" onClick={toggleDarkMode}>
+        <p className="dark-mode-btn__text">
+          {theme === "dark" ? "Light" : "Dark"}
+        </p>
+        <div className="dark-mode-btn__icon">
+          {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+        </div>
+      </button>
     </header>
   );
 }

@@ -4,10 +4,9 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import UserCard from "./components/UserCard/UserCard";
 import "./App.scss";
 import axios from "axios";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
   const [userData, setUserData] = useState(null);
 
   const handleUserFound = (data) => {
@@ -29,20 +28,12 @@ function App() {
     fetchOctocatData();
   }, []);
 
-  useEffect(() => {
-    document.body.classList.toggle("dark-mode", isDarkMode);
-  }, [isDarkMode]);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode((prevMode) => !prevMode);
-  };
-
   return (
-    <div className={`App ${isDarkMode ? "dark-mode" : ""}`}>
-      <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-      <SearchBar onUserFound={handleUserFound} isDarkMode={isDarkMode} />
-      <UserCard userData={userData} isDarkMode={isDarkMode} />
-    </div>
+    <ThemeProvider>
+      <Header />
+      <SearchBar onUserFound={handleUserFound} />
+      <UserCard userData={userData} />
+    </ThemeProvider>
   );
 }
 
