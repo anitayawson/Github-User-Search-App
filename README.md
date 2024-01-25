@@ -34,9 +34,9 @@ Users should be able to:
 
 ![](./Screenshot%202024-01-24%20at%2010.43.52 PM.png)
 
-### Links
+### Solution Link
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- [Check out the live app here](https://github-user-search-app-rust.vercel.app/)
 
 ## My Process
 
@@ -58,22 +58,6 @@ For my fist time implementing dark/light mode, I researched various solutions, u
 #### Custom CSS Variables in React:
 
 I delved into the creation and manipulation of custom CSS variables to facilitate dynamic styling based on the selected theme. This allowed for more flexible and maintainable theming options within the React application.
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
 
 ### Continued development
 
