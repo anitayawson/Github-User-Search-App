@@ -8,7 +8,10 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const prefersDarkMode = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+  const [isDarkMode, setIsDarkMode] = useState(prefersDarkMode);
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
