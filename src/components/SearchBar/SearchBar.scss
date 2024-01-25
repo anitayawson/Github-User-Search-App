@@ -87,8 +87,13 @@
     color: #f74646;
     font-weight: $font-bold;
     position: absolute;
-    right: 8.5rem;
+    font-size: 0.7rem;
     bottom: 1.32rem;
-    font-size: 0.9375rem;
+    right: 6.5rem;
+
+    @include tablet {
+      right: 8.5rem;
+      font-size: 0.9375rem;
+    }
   }
 }
