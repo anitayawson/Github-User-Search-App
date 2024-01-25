@@ -1,0 +1,48 @@
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+
+html,
+body,
+h1,
+h2,
+h3,
+p {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Space Mono", monospace;
+}
+
+button,
+input {
+  font-family: "Space Mono", monospace;
+  color: $devfinder-dark-blue;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $devfinder-light-blue;
+  padding-top: 1.9375rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  &.dark-mode {
+    background-color: $darkmode-black;
+    color: $darkmode-white;
+  }
+
+  @include tablet {
+    padding: 8.75rem 6.125rem 10rem 6.0625rem;
+  }
+
+  @include desktop {
+    padding-top: 4.5rem;
+    padding-bottom: 6rem;
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+}
