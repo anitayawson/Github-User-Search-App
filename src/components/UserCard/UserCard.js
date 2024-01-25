@@ -1,8 +1,8 @@
 import "./UserCard.scss";
-import locationIcon from "../../assets/icon-location.svg";
-import linkIcon from "../../assets/icon-website.svg";
-import socialIcon from "../../assets/icon-twitter.svg";
-import companyIcon from "../../assets/icon-company.svg";
+import { ReactComponent as LocationIcon } from "../../assets/icon-location.svg";
+import { ReactComponent as LinkIcon } from "../../assets/icon-website.svg";
+import { ReactComponent as SocialIcon } from "../../assets/icon-twitter.svg";
+import { ReactComponent as CompanyIcon } from "../../assets/icon-company.svg";
 import { useTheme } from "../ThemeProvider";
 
 export default function UserCard({ userData }) {
@@ -76,10 +76,10 @@ export default function UserCard({ userData }) {
               !userData?.location ? "not-available" : ""
             }`}
           >
-            <img
-              className="location-icon"
-              src={locationIcon}
-              alt="location pin"
+            <LocationIcon
+              className={`location-icon ${theme} ${
+                userData?.company ? "" : "not-available"
+              }`}
             />
             <p className={`user-link__name ${theme}`}>
               {userData?.location || "Not Available"}
@@ -90,7 +90,11 @@ export default function UserCard({ userData }) {
               !userData?.blog ? "not-available" : ""
             }`}
           >
-            <img className="link-icon" src={linkIcon} alt="website" />
+            <LinkIcon
+              className={`link-icon ${theme} ${
+                userData?.company ? "" : "not-available"
+              }`}
+            />
             {userData?.blog ? (
               <a href={userData.blog} target="_blank" rel="noopener noreferrer">
                 <p className={`user-link__name ${theme}`}>{userData.blog}</p>
@@ -108,7 +112,11 @@ export default function UserCard({ userData }) {
         </div>
         <div>
           <div className="user-links__social user-link__container">
-            <img className="social-icon" src={socialIcon} alt="twitter" />
+            <SocialIcon
+              className={`social-icon ${theme} ${
+                userData?.company ? "" : "not-available"
+              }`}
+            />
             <p
               className={`user-link__name ${theme} ${
                 userData?.twitter_username ? "" : "not-available"
@@ -128,7 +136,11 @@ export default function UserCard({ userData }) {
             </p>
           </div>
           <div className="user-links__company user-link__container">
-            <img src={companyIcon} alt="office building" />
+            <CompanyIcon
+              className={`company-icon ${theme} ${
+                userData?.company ? "" : "not-available"
+              }`}
+            />
             <p
               className={`user-link__name ${theme} ${
                 userData?.company ? "" : "not-available"

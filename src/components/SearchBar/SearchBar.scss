@@ -18,11 +18,11 @@
 
     &.dark {
       background: #1e2a47;
-      color: #ffffff;
+      color: $darkmode-white;
       box-shadow: none;
 
       &::placeholder {
-        color: #ffffff;
+        color: $darkmode-white;
       }
     }
 

@@ -19,6 +19,16 @@
       .dark-mode-btn__icon svg path {
         fill: #ffffff;
       }
+
+      &:hover {
+        .dark-mode-btn__text {
+          color: $darkmode-hover-color;
+        }
+
+        .dark-mode-btn__icon svg path {
+          fill: $darkmode-hover-color;
+        }
+      }
     }
   }
 }
@@ -44,6 +54,16 @@
 
     .dark-mode-btn__icon svg path {
       fill: $logo-color;
+    }
+
+    .dark {
+      .dark-mode-btn__text {
+        color: $darkmode-hover-color;
+      }
+
+      .dark-mode-btn__icon svg path {
+        fill: $darkmode-hover-color;
+      }
     }
   }
 

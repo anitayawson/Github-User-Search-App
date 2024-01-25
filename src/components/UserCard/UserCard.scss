@@ -248,43 +248,16 @@
   }
 }
 
-.location-icon {
-  width: 0.8596rem;
-  height: 1.25rem;
-  flex-shrink: 0;
-
-  &.dark-mode {
-    fill: $darkmode-white;
-  }
-}
-
-.link-icon {
-  width: 1.2494rem;
-  height: 1.2466rem;
-  flex-shrink: 0;
-
-  &.dark-mode {
-    fill: $darkmode-white;
-  }
-}
-
-.social-icon {
-  width: 1.25rem;
-  height: 1.2rem;
-  flex-shrink: 0;
-
-  &.dark-mode {
-    fill: $darkmode-white;
-  }
-}
-
+.location-icon,
+.link-icon,
+.social-icon,
 .company-icon {
-  width: 1.25rem;
-  height: 1.2408rem;
-  flex-shrink: 0;
+  path {
+    fill: $devfinder-dark-blue;
 
-  &.dark-mode {
-    fill: $darkmode-white;
+    .dark & {
+      fill: $darkmode-white;
+    }
   }
 }
 
@@ -294,9 +267,14 @@
   &.dark {
     color: $darkmode-white;
     opacity: 0.3;
-  }
 
-  .social-icon {
-    fill: $unavailable-info-color;
+    .location-icon,
+    .link-icon,
+    .social-icon,
+    .company-icon {
+      path {
+        opacity: 0.3;
+      }
+    }
   }
 }
