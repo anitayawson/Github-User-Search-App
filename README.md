@@ -2,14 +2,18 @@
 
 Hi there! 🙋🏽‍♀️😊 Welcome to my Github User Search App - my solution to the [GitHub user search app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6).
 
-This was a personal project to expand my React knowledge and further refine my skills in fethcing data from APIs and displaying it dynamically in user interface elements.
+This is a personal project to expand my React knowledge and further refine my skills in fethcing data from APIs and displaying it dynamically in user interface elements.
+
+🚧 Work in Progress 🚧
+
+I'm actively working on fine-tuning this project to improve its functionality and user experience. Feel free to check back later for updates!
 
 ## Table of Contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
+  - [Solution Link](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -19,7 +23,7 @@ This was a personal project to expand my React knowledge and further refine my s
 
 ### The Challenge
 
-Frontend Mentor provides a platform for developers to enhance their skills by completing real-world projects. The GitHub User Search App challenge involves designing and implementing a user-friendly interface that allows users to search for GitHub profiles and view user information.
+The GitHub User Search App challenge involves designing and implementing a user-friendly interface that allows users to search for GitHub profiles and view user information.
 
 Users should be able to:
 
@@ -53,17 +57,17 @@ Users should be able to:
 
 #### Dark/Light Modes Implementation:
 
-For my fist time implementing dark/light mode, I researched various solutions, ultimately opting for a Theme Provider pattern to manage and toggle between themes seamlessly.
+For my first time implementing dark/light mode, I researched various solutions, ultimately opting for a Theme Provider pattern to manage and toggle between themes seamlessly.
 
 #### Custom CSS Variables in React:
 
-I delved into the creation and manipulation of custom CSS variables to facilitate dynamic styling based on the selected theme. This allowed for more flexible and maintainable theming options within the React application.
+I delved into the creation and manipulation of custom CSS variables to facilitate dynamic styling based on the selected theme. This allowed for more flexible and maintainable theming options.
 
 ### Continued development
 
 #### Optimizing Dark/Light Mode Toggle:
 
-While the current implementation of the dark/light mode toggle is functional, I aim to explore more efficient methods for seamless theming transitions, possibly exploring state management libraries to enhance the user experience.
+While the current implementation of the dark/light mode toggle is functional, I plan to explore more efficient methods for seamless theming transitions, possibly exploring state management libraries to enhance the user experience.
 
 #### Utilizing CSS Grid:
 
