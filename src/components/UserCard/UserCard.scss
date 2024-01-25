@@ -248,33 +248,11 @@
   }
 }
 
-.location-icon,
-.link-icon,
-.social-icon,
-.company-icon {
-  path {
-    fill: $devfinder-dark-blue;
-
-    .dark & {
-      fill: $darkmode-white;
-    }
-  }
-}
-
 .not-available {
   color: $unavailable-info-color;
 
   &.dark {
     color: $darkmode-white;
     opacity: 0.3;
-
-    .location-icon,
-    .link-icon,
-    .social-icon,
-    .company-icon {
-      path {
-        opacity: 0.3;
-      }
-    }
   }
 }
