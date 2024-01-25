@@ -20,6 +20,10 @@
       background: #1e2a47;
       color: #ffffff;
       box-shadow: none;
+
+      &::placeholder {
+        color: #ffffff;
+      }
     }
 
     &:hover {
