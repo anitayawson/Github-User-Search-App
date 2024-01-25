@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./Screenshot%202024-01-24%20at%2010.43.52 PM.png)
 
 ### Links
 
